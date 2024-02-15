@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Providers } from "@/Providers";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import Error from "./error";
+import DBCleanup from "@/components/DBCleanup";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
+  DBCleanup(20); //DBCleanup(duplicateLimit) - runs on every page load, checks for duplicates and removes them if the limit is reached
   return (
     <html lang="en">
       <body className={inter.className}>
