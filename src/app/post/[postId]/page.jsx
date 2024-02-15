@@ -35,6 +35,7 @@ export default async function SinglePostPage({ params }) {
       <main className="whitespace-pre-wrap">{post.body}</main>
 
       <h2>Votes</h2>
+
       <Vote postId={post.id} votes={post.vote_total} />
 
       <CommentForm postId={post.id} />

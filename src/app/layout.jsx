@@ -4,6 +4,8 @@ import { UserInfo } from "../components/UserInfo";
 import "./globals.css";
 import Link from "next/link";
 import { Providers } from "@/Providers";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import Error from "./error";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +33,12 @@ export default async function RootLayout({ children }) {
               <UserInfo />
             </div>
           </header>
-          <main className="max-w-screen-xl ml-4 lg:mx-auto">{children}</main>
+
+          <main className="max-w-screen-xl ml-4 lg:mx-auto">
+            <ErrorBoundary FallbackComponent={<Error />}>
+              {children}
+            </ErrorBoundary>
+          </main>
         </Providers>
       </body>
     </html>
