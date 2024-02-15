@@ -13,7 +13,7 @@ export default function Error({ error, reset }) {
       <h2>Hey cutie!</h2>
       <p className="border border-white p-4">{error.message}</p>
       <p>
-        Don`&apos;`t worry though, go back and try again, if the error persists
+        Don&apos;t worry though, go back and try again, if the error persists
         let us know at help@diddit.com
       </p>
 

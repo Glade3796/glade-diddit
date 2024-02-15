@@ -28,7 +28,7 @@ export async function PostList({ currentPage = 1 }) {
               {post.title}
             </Link>
             <p className="text-zinc-400">posted by {post.name}</p>
-            <Vote postId={post.id} votes={post.vote_total} />
+            <Vote postId={post.id} voteTotal={post.vote_total} />
           </li>
         ))}
       </ul>

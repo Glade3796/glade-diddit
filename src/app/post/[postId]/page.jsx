@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import { CommentForm } from "@/components/CommentForm";
 import { CommentList } from "@/components/CommentList";
 import { Vote } from "@/components/Vote";
@@ -16,7 +17,6 @@ export async function generateMetadata({ params }) {
   );
   const post = response.rows[0];
 
-  console.log("params", postId);
   return {
     title: post.title + " || Didit",
     description: "A didit post",
@@ -56,7 +56,7 @@ export default async function SinglePostPage({ params }) {
 
       <h2>Votes</h2>
 
-      <Vote postId={post.id} votes={post.vote_total} />
+      <Vote postId={post.id} voteTotal={post.vote_total} />
 
       <CommentForm postId={post.id} />
       <CommentList postId={post.id} />
