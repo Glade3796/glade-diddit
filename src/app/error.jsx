@@ -8,10 +8,11 @@ export default function Error({ error, reset }) {
     console.error(error);
   }, [error]);
 
+  const text = error.message;
   return (
     <div className="flex flex-col justify-center items-center gap-4 m-4 ">
       <h2>Hey cutie!</h2>
-      <p className="border border-white p-4">{error.message}</p>
+      <p className="border border-white p-4">please log in to vote</p>
       <p>
         Don&apos;t worry though, go back and try again, if the error persists
         let us know at help@diddit.com
